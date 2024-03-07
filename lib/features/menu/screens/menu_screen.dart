@@ -50,7 +50,7 @@ class _MenuScreenState extends State<MenuScreen> {
     final screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: RefreshIndicator(
-        color: primaryColor,
+        color: backgroundColor,
         onRefresh: _refresh,
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
@@ -58,7 +58,7 @@ class _MenuScreenState extends State<MenuScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: screenHeight * 0.09,
+                height: screenHeight * 0.1,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemExtent: screenWidth / 5.3,

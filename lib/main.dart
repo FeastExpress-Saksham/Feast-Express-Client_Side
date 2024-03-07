@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:munchmate/features/auth/screens/user_data.dart';
 import 'package:munchmate/features/home/screens/home_screen.dart';
 import 'package:munchmate/firebase_options.dart';
 import 'package:munchmate/provider/last_order_card_provider.dart';
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
                       lastOrders: [],
                     ),
                   );
-                  return const HomeScreen();
+                  return const RegisterScreen();
                 }
                 return const LoginScreen();
               }

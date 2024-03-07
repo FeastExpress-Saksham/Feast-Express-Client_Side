@@ -46,6 +46,13 @@ dependencies:
   provider:
   firebase_database:
   cloud_firestore:
+  latlong2: ^0.9.0
+  location: ^5.0.3
+  http: ^1.1.0
+  flutter_map: ^6.1.0
+  routing_client_dart: ^0.5.4
+  open_route_service: ^1.2.4
+  web3dart: ^2.7.3
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +80,7 @@ flutter:
   assets:
     - assets/jsons/
     - assets/images/
+    - assets/abi.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

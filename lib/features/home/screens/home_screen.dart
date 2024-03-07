@@ -54,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen>
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: backgroundColor,
       drawer: SafeArea(
         child: Drawer(
           shape: const RoundedRectangleBorder(
@@ -268,7 +269,10 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           );
         },
-        label: const Text("Your Order"),
+        label: const Text(
+          "Your Order",
+          style: TextStyle(color: whiteColor),
+        ),
         icon: const Icon(
           Icons.fastfood_rounded,
           color: whiteColor,
@@ -294,11 +298,10 @@ class _HomeScreenState extends State<HomeScreen>
               }),
               title: Text(
                 "MunchMate",
-                style: TextStyle(
-                  fontSize: width * 0.06,
-                ),
+                style: TextStyle(fontSize: width * 0.06, color: whiteColor),
               ),
               bottom: TabBar(
+                labelColor: whiteColor,
                 controller: _tabController,
                 indicatorColor: whiteColor,
                 labelStyle: TextStyle(
@@ -312,7 +315,10 @@ class _HomeScreenState extends State<HomeScreen>
                     text: 'Menu',
                   ),
                   Tab(
-                    icon: Icon(Icons.history),
+                    icon: Icon(
+                      Icons.history,
+                      color: whiteColor,
+                    ),
                     // text: 'Recent Orders',
                   )
                 ],

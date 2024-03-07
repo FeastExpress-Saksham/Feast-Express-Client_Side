@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'MunchMate',
+                    'FeastExpress',
                     style: TextStyle(
                       fontSize: width * 0.1,
                       fontWeight: FontWeight.bold,
@@ -90,6 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 onPressed: () {
                   signInWithGoogle();
+                  
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
