@@ -273,6 +273,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     pass.text,
                                     phone.text,
                                   );
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreen()));
                                   print(res);
                                   if (res == "Success") {
                                     Navigator.pushReplacement(

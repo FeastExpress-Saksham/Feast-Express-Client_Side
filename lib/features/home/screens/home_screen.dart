@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen>
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(7.0),
                                 child: Text(
                                   Provider.of<LocalUserProvider>(context)
                                       .localUser
@@ -297,8 +297,8 @@ class _HomeScreenState extends State<HomeScreen>
                 );
               }),
               title: Text(
-                "MunchMate",
-                style: TextStyle(fontSize: width * 0.06, color: whiteColor),
+                "FeastExpress",
+                style: TextStyle(fontSize: width * 0.07, color: whiteColor),
               ),
               bottom: TabBar(
                 labelColor: whiteColor,

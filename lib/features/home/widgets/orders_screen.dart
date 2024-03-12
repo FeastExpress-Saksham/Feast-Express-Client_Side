@@ -153,11 +153,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                           showToast('Ordered!');
                           Provider.of<LocalUserProvider>(context, listen: false)
                               .getLastOrders(context);
-                          sendToken(owner_private_key, BigInt.from(int.parse(
-                                                      "30") *
-                                                  100), ethClient!);
+                          sendToken(person_public_key,
+                              BigInt.from(int.parse("30") * 100), ethClient!);
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => MapScreen()));
+                              builder: (context) => MapScreen(location: location,)));
                         },
                         child: Text(
                           'Pay',

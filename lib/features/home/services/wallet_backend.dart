@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 import 'package:munchmate/common/constants.dart';
-
 import 'package:web3dart/web3dart.dart';
 
 Future<DeployedContract> loadContract() async {
@@ -19,8 +18,10 @@ Future<String> callFunction(String funcname, List<dynamic> args,
   final result = await ethClient.sendTransaction(
       credentials,
       Transaction.callContract(
-        gasPrice:EtherAmount.fromInt(EtherUnit.gwei,1000 ) ,
-          contract: contract, function: ethFunction, parameters: args),
+          gasPrice: EtherAmount.fromInt(EtherUnit.gwei, 1000),
+          contract: contract,
+          function: ethFunction,
+          parameters: args),
       chainId: null,
       fetchChainIdFromNetworkId: true);
   return result;

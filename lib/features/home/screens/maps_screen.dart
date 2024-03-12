@@ -8,8 +8,8 @@ import 'package:location/location.dart';
 import 'package:open_route_service/open_route_service.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({super.key});
-
+  const MapScreen({super.key, required this.location});
+  final List<double> location;
   @override
   State<MapScreen> createState() => _MapViewState();
 }
@@ -18,8 +18,7 @@ class _MapViewState extends State<MapScreen> {
   final OpenRouteService client = OpenRouteService(
       apiKey: '5b3ce3597851110001cf62488949a2cc67b0445da3975afeaca9813e',
       defaultProfile: ORSProfile.drivingCar);
-  double startLat = 28.612151;
-  double startLng = 77.0377196;
+
   double endLat = 28.612157;
   double endLng = 77.047718;
 
@@ -44,7 +43,7 @@ class _MapViewState extends State<MapScreen> {
           child: Container(
             child: FlutterMap(
               options: MapOptions(
-                initialCenter: LatLng(28.612151, 77.0377196),
+                initialCenter: LatLng(widget.location[0], widget.location[1]),
                 initialZoom: 18,
               ),
               mapController: controller,
@@ -123,7 +122,8 @@ class _MapViewState extends State<MapScreen> {
   Future<Polyline> route() async {
     final List<ORSCoordinate> routeCoordinates =
         await client.directionsRouteCoordsGet(
-      startCoordinate: ORSCoordinate(latitude: startLat, longitude: startLng),
+      startCoordinate: ORSCoordinate(
+          latitude: widget.location[0], longitude: widget.location[1]),
       endCoordinate: ORSCoordinate(latitude: endLat, longitude: endLng),
     );
     routeCoordinates.forEach(print);

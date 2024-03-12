@@ -53,6 +53,7 @@ dependencies:
   routing_client_dart: ^0.5.4
   open_route_service: ^1.2.4
   web3dart: ^2.7.3
+  easy_search_bar: ^2.5.0
 
 dev_dependencies:
   flutter_test:
